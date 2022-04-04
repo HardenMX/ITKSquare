@@ -1,5 +1,5 @@
-# Task 16
+# Task 17
 
 ## Screenshot
 
-16[16_instagram_card](assets\screenshots\16_instagram_card.png)
+17[17_stack_product_ui](assets\screenshots\17_stack_product_ui.png)
