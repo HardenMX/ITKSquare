@@ -1,5 +1,5 @@
-# Task 17
+# Task 18
 
 ## Screenshot
 
-17[17_stack_product_ui](assets\screenshots\17_stack_product_ui.png)
+18[18_login_screen_ui](assets\screenshots\18_login_screen_ui.png)
