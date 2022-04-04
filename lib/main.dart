@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 
-//flutter run -t lib/exercise8.dart
-//08_Column_1_image_text
+//flutter run -t lib/exercise9.dart
+//09_Column_2_image_text
 void main() {
   runApp(MaterialApp(
       home: Scaffold(
+    backgroundColor: const Color.fromARGB(255, 235, 247, 193),
     body: Center(
         child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
