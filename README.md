@@ -1,5 +1,5 @@
-# Task 1
+# Task 2
 
 ## Screenshot
 
-1[01_hello_world](assets\screenshots\01_hello_world.png)
+2[02_display_image](assets\screenshots\02_display_image.png)
