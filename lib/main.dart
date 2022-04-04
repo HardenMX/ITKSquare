@@ -1,52 +1,33 @@
 import 'package:flutter/material.dart';
 
-//flutter run -t lib/exercise10.dart
-//10_Column_3_Login_UI
+//flutter run -t lib/exercise11.dart
+//11_Row_1_product_card
 
 void main() {
-  runApp(MaterialApp(
-      title: "Exercise #10",
+  runApp(
+    MaterialApp(
       home: Scaffold(
-          body: SizedBox(
-        height: double.infinity,
-        width: double.infinity,
-        child: Column(
-            crossAxisAlignment: CrossAxisAlignment.center,
-            mainAxisAlignment: MainAxisAlignment.start,
+        body: Container(
+          height: double.infinity,
+          width: double.infinity,
+          margin: const EdgeInsets.only(bottom: 300),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
-              Container(
-                height: 460,
-                margin: const EdgeInsets.only(bottom: 16),
-                //imagen
-                child: Image.network(
-                  "https://i.imgur.com/AxuN9Jz.jpg",
-                  fit: BoxFit.cover,
-                ),
+              Image.network(
+                "https://i.imgur.com/AKIHpGB.png",
+                width: 50,
+                height: 50,
               ),
-              Container(
-                //boton1
-                margin: const EdgeInsets.only(bottom: 8),
-                child: OutlinedButton(
-                  child: const Text("Continue with Google"),
-                  onPressed: () {},
-                ),
+              const Text(
+                "WHATSAPPWEB.COM",
+                style: TextStyle(fontWeight: FontWeight.bold),
               ),
-              Container(
-                //boton2
-                margin: const EdgeInsets.only(bottom: 8),
-                child: ElevatedButton(
-                  child: const Text("Continue with Facebook"),
-                  onPressed: () {},
-                ),
-              ),
-              Container(
-                //texto final
-                margin: const EdgeInsets.fromLTRB(16, 0, 16, 16),
-                child: const Text(
-                  "Welcome to APPMAKING! Log into your account to continue learning!",
-                  textAlign: TextAlign.center,
-                ),
-              )
-            ]),
-      ))));
+              const Icon(Icons.favorite_border_outlined),
+            ],
+          ),
+        ),
+      ),
+    ),
+  );
 }
