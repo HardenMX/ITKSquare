@@ -1,163 +1,54 @@
 import 'package:flutter/material.dart';
 
-//flutter run -t lib/exercise13.dart
-//14_social_icons_ui
+//15_receipe_ui
 
 void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: SizedBox(
-            width: double.infinity,
-            height: double.infinity,
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Container(
-                    margin: const EdgeInsets.all(16), child: newMethod1()),
-                Container(
-                    margin: const EdgeInsets.all(16), child: newMethod2()),
-                Container(
-                    margin: const EdgeInsets.all(16), child: newMethod3()),
-              ],
-            )),
+        body: Container(
+          width: double.infinity,
+          height: double.infinity,
+          margin: const EdgeInsets.all(8),
+          child: Column(
+            children: [
+              Container(
+                child: Image.network(
+                  "https://i.imgur.com/VGoollT.jpg",
+                  fit: BoxFit.fitWidth,
+                  height: 300,
+                ),
+              ),
+              Container(
+                child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Column(
+                        children: const [
+                          Text(
+                            "Cochinita Pibil",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold, fontSize: 20),
+                          ),
+                          Text("10 - 20 min")
+                        ],
+                      ),
+                      Container(
+                          child: IconButton(
+                              onPressed: () {},
+                              icon:
+                                  const Icon(Icons.favorite_border_outlined))),
+                    ]),
+              ),
+              Container(
+                margin: const EdgeInsets.only(top: 20),
+                child: const Text(
+                    'Los tacos de Cochinita Pibil son una de las delicias culinarias mas emblemáticas de Yucatán. Se conoce que el consumo de este alimento es un ritual de curación para las personas con alto grado de alcoholismo. Los domingos en la mañana son el día sagrado de los yucatecos en el cual acostumbran salir de su casa solamente para poder disfrutar de estos manajares. El consumo de cochinita en el estado es tan grande que la contaminación provocada por las granjas porcinas es una de las más grandes preocupaciones de los expertos en geohidrología y calidad del agua. '),
+              )
+            ],
+          ),
+        ),
       ),
-    ),
-  );
-}
-
-//Change Sponsors here
-//2 Sponsors Premium
-Container newMethod1() {
-  return Container(
-    width: 260,
-    height: 130,
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Container(
-          color: const Color.fromARGB(209, 238, 238, 238),
-          width: 125,
-          height: 125,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                "https://i.imgur.com/XvwqQoC.png",
-                width: 40,
-              ),
-              const Text("Facebook"),
-            ],
-          ),
-        ),
-        Container(
-          color: const Color.fromARGB(209, 238, 238, 238),
-          width: 125,
-          height: 125,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                "https://i.imgur.com/o4g2Oqp.png",
-                width: 40,
-              ),
-              const Text("Twitter"),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-//Change Sponsors here
-//2 Sponsors Premium
-Container newMethod2() {
-  return Container(
-    width: 260,
-    height: 130,
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Container(
-          color: const Color.fromARGB(209, 238, 238, 238),
-          width: 125,
-          height: 125,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                "https://i.imgur.com/2HYmQd4.png",
-                width: 40,
-              ),
-              const Text("Instagram"),
-            ],
-          ),
-        ),
-        Container(
-          color: const Color.fromARGB(209, 238, 238, 238),
-          width: 125,
-          height: 125,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                "https://i.imgur.com/ogMu7vC.png",
-                width: 40,
-              ),
-              const Text("Youtube"),
-            ],
-          ),
-        ),
-      ],
-    ),
-  );
-}
-
-//Change Sponsors here
-//2 Sponsors Premium
-Container newMethod3() {
-  return Container(
-    width: 260,
-    height: 130,
-    child: Row(
-      crossAxisAlignment: CrossAxisAlignment.center,
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        Container(
-          color: const Color.fromARGB(209, 238, 238, 238),
-          width: 125,
-          height: 125,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                "https://i.imgur.com/AKIHpGB.png",
-                width: 40,
-              ),
-              const Text("WhatsApp"),
-            ],
-          ),
-        ),
-        Container(
-          color: const Color.fromARGB(209, 238, 238, 238),
-          width: 125,
-          height: 125,
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Image.network(
-                "https://i.imgur.com/h8CSRmv.png",
-                width: 40,
-              ),
-              const Text("Telegram"),
-            ],
-          ),
-        ),
-      ],
     ),
   );
 }
