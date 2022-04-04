@@ -1,29 +1,35 @@
 import 'package:flutter/material.dart';
 
-//flutter run -t lib/exercise11.dart
-//11_Row_1_product_card
+//flutter run -t lib/exercise12.dart
+//12_Row_Google_Login
 
 void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        body: Container(
+        body: SizedBox(
           height: double.infinity,
           width: double.infinity,
-          margin: const EdgeInsets.only(bottom: 300),
           child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              Image.network(
-                "https://i.imgur.com/AKIHpGB.png",
-                width: 50,
-                height: 50,
-              ),
-              const Text(
-                "WHATSAPPWEB.COM",
-                style: TextStyle(fontWeight: FontWeight.bold),
-              ),
-              const Icon(Icons.favorite_border_outlined),
+              OutlinedButton(
+                  style: OutlinedButton.styleFrom(primary: Colors.white),
+                  onPressed: () {},
+                  child: Row(
+                    children: [
+                      Image.network(
+                        "https://i.imgur.com/TEjshVu.png",
+                        width: 50,
+                        height: 50,
+                      ),
+                      const Text(
+                        "Continue With Google",
+                        style: TextStyle(color: Colors.black),
+                      )
+                    ],
+                  ))
             ],
           ),
         ),
