@@ -1,5 +1,5 @@
-# Task 20
+# Task 22
 
 ## Screenshot
 
-20[20_product_card](assets\screenshots\20_product_card.png)
+22[22_list_view_social_card](assets\screenshots\22_list_view_social_card.png)
