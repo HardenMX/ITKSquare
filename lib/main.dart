@@ -1,4 +1,4 @@
-//22_list_view_social_card
+//23_grid_view_product_listing
 
 import 'package:flutter/material.dart';
 
@@ -6,33 +6,79 @@ void main() {
   runApp(
     MaterialApp(
       home: Scaffold(
-        appBar: (AppBar(
-          title: const Text("List View Social Card"),
+        appBar: AppBar(
+          title: const Text("Grid View Product"),
           centerTitle: true,
-        )),
+        ),
         body: Container(
           margin: const EdgeInsets.all(16),
-          width: double.infinity,
           height: double.infinity,
-          child: ListView(
-            scrollDirection: Axis.vertical,
+          width: double.infinity,
+          child: GridView.count(
+            crossAxisCount: 2,
+            mainAxisSpacing: 20,
+            crossAxisSpacing: 20,
             children: [
               Container(
-                  color: Colors.grey.shade200,
-                  margin: const EdgeInsets.only(bottom: 16),
-                  child: oneCard()),
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
               Container(
-                  color: Colors.grey.shade200,
-                  margin: const EdgeInsets.only(bottom: 16),
-                  child: oneCard()),
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
               Container(
-                  color: Colors.grey.shade200,
-                  margin: const EdgeInsets.only(bottom: 16),
-                  child: oneCard()),
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
               Container(
-                  color: Colors.grey.shade200,
-                  margin: const EdgeInsets.only(bottom: 16),
-                  child: oneCard()),
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
+              Container(
+                width: 200,
+                height: 200,
+                color: Colors.pink.shade100,
+                child: staccato(),
+              ),
             ],
           ),
         ),
@@ -41,64 +87,42 @@ void main() {
   );
 }
 
-Column oneCard() {
-  return Column(
+Widget staccato() {
+  return Stack(
     children: [
-      Container(
-        margin: const EdgeInsets.all(8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(48.0),
-              child: Image.network(
-                "https://i.imgur.com/sFcgDpo.png",
-              ),
-            ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisAlignment: MainAxisAlignment.start,
-              children: const [Text("APPMAKING.COM"), Text("10 - 20 min")],
-            ),
-            PopupMenuButton<dynamic>(
-                itemBuilder: (BuildContext context) =>
-                    <PopupMenuEntry<dynamic>>[]),
-          ],
+      Image.network(
+        "https://i.imgur.com/kKDHyoD.png",
+      ),
+      Align(
+        alignment: Alignment.topRight,
+        child: CircleAvatar(
+          backgroundColor: Colors.white,
+          child: IconButton(
+            onPressed: () {},
+            icon: const Icon(Icons.favorite_border_outlined),
+          ),
         ),
       ),
-      Container(
-        child: Image.network("https://i.imgur.com/VGoollT.jpg"),
-      ),
-      Container(
-        margin: const EdgeInsets.only(top: 8),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceAround,
-          children: [
-            Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.favorite_border_outlined),
-                  onPressed: () {},
-                ),
-                const Text("Like"),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(icon: const Icon(Icons.comment), onPressed: () {}),
-                const Text("Comment"),
-              ],
-            ),
-            Row(
-              children: [
-                IconButton(
-                  icon: const Icon(Icons.share),
-                  onPressed: () {},
-                ),
-                const Text("Share"),
-              ],
-            ),
-          ],
+      Align(
+        alignment: Alignment.bottomLeft,
+        child: Container(
+          padding: EdgeInsets.only(left: 8.0),
+          color: Colors.black38,
+          width: double.infinity,
+          height: 40,
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: const [
+              Text("Airpods",
+                  style: TextStyle(
+                      fontWeight: FontWeight.bold, color: Colors.white)),
+              Text(
+                "5 min ago",
+                style: TextStyle(color: Colors.white),
+              )
+            ],
+          ),
         ),
       ),
     ],
