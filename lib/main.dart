@@ -1,4 +1,5 @@
-//19_contact_form
+//20_product_card
+
 import 'package:flutter/material.dart';
 
 void main() {
@@ -6,77 +7,122 @@ void main() {
     MaterialApp(
       title: "Actividad",
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Contact Form'),
-          centerTitle: true,
-        ),
         body: Container(
-          child: Container(
-            margin: const EdgeInsets.all(16.0),
-            child: Column(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+          height: double.infinity,
+          width: double.infinity,
+          child: Column(children: [
+            Container(
+              height: 300,
+              color: Colors.pink.shade100,
+              child: Stack(
                 children: [
-                  const TextField(
-                    decoration: InputDecoration(
-                      labelText: "Name",
-                      border: OutlineInputBorder(),
+                  Align(
+                    alignment: const Alignment(.9, -.9),
+                    child: CircleAvatar(
+                      backgroundColor: Colors.white,
+                      child: IconButton(
+                          onPressed: () {},
+                          icon: const Icon(Icons.favorite_border_outlined)),
                     ),
-                    keyboardType: TextInputType.name,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                      labelText: "Email",
-                      border: OutlineInputBorder(),
+                  Align(
+                    alignment: const Alignment(-.9, .9),
+                    child: Container(
+                      width: 60,
+                      height: 30,
+                      decoration: BoxDecoration(
+                          color: Colors.yellow.shade300,
+                          borderRadius: BorderRadius.circular(12)),
+                      child: const Padding(
+                        padding: EdgeInsets.all(8),
+                        child: Text(
+                          "5% Off",
+                          style: TextStyle(fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
-                    keyboardType: TextInputType.emailAddress,
                   ),
-                  const TextField(
-                    decoration: InputDecoration(
-                      labelText: "Mobile",
-                      border: OutlineInputBorder(),
+                  Align(
+                    alignment: Alignment.center,
+                    child: Image.network(
+                      "https://i.imgur.com/kKDHyoD.png",
+                      fit: BoxFit.fitWidth,
                     ),
-                    keyboardType: TextInputType.phone,
                   ),
-                  const TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      labelText: "Password",
-                      border: OutlineInputBorder(),
-                    ),
-                    keyboardType: TextInputType.text,
+                ],
+              ),
+            ),
+            //ESTO VA DESPUES DELL STACK
+            Container(
+              height: 50,
+              width: double.infinity,
+              margin: const EdgeInsets.all(16),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: const [
+                      Text(
+                        "AirPods for sale",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 22,
+                        ),
+                      ),
+                      Text("5 mins before"),
+                    ],
                   ),
                   const Align(
-                      alignment: Alignment.centerLeft, child: Text("Gender")),
-                  RadioListTile(
-                    value: "maleGender",
-                    groupValue: null,
-                    onChanged: null,
-                    title: const Text("Male"),
+                      alignment: Alignment.centerLeft,
+                      child: Text(
+                        "\$999",
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 20,
+                            color: Color.fromARGB(255, 230, 161, 12)),
+                      )),
+                ],
+              ),
+            ),
+            Container(
+              margin: const EdgeInsets.all(16),
+              child: const Text(
+                "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system, and expound the actual teachings of the great explorer of the truth, the master-builder of human happiness. No one rejects, dislikes, or avoids pleasure itself, because it is pleasure, but because those who do not know how to pursue pleasure rationally encounter consequences that are extremely painful. Nor again is there anyone who loves or pursues or desires to obtain pain of itself, because it is pain, but because occasionally circumstances occur in which toil and pain can procure him some great pleasure. To take a trivial example, which of us ever undertakes laborious physical exercise, except to obtain some advantage from it? But who has any right to find fault with a man who chooses to enjoy a pleasure that has no annoying consequences, or one who avoids a pain that produces no resultant pleasure?",
+                style: TextStyle(fontSize: 15),
+              ),
+            ),
+            Expanded(
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                crossAxisAlignment: CrossAxisAlignment.center,
+                children: [
+                  SizedBox(
+                    height: 60,
+                    width: 180,
+                    child: OutlinedButton(
+                      onPressed: () {},
+                      child: const Text(
+                        "ADD TO CART",
+                        style: TextStyle(
+                            fontWeight: FontWeight.w600, fontSize: 22),
+                      ),
+                    ),
                   ),
-                  RadioListTile(
-                    value: "femaleGender",
-                    groupValue: null,
-                    onChanged: null,
-                    title: const Text("Female"),
+                  SizedBox(
+                    height: 60,
+                    width: 180,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      child: const Text("BUY NOW",
+                          style: TextStyle(
+                              fontWeight: FontWeight.w600, fontSize: 22)),
+                    ),
                   ),
-                  const SizedBox(
-                    height: 100,
-                  ),
-                  CheckboxListTile(
-                    value: false,
-                    onChanged: (bool? value) {},
-                    checkColor: Colors.black,
-                    title: const Text(
-                        "By signing up, I accept the Terms and Conditions"),
-                    controlAffinity: ListTileControlAffinity.leading,
-                  ),
-                  ElevatedButton(
-                    onPressed: () {},
-                    child: const Text("Submit"),
-                  ),
-                ]),
-          ),
+                ],
+              ),
+            ),
+          ]),
         ),
       ),
     ),
